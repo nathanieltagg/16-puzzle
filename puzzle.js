@@ -1,3 +1,8 @@
+// Nathaniel Tagg (nathaniel.tagg@mgmail.com)
+//
+// Notes: gotta admit, this was a lot of fun to write. 
+// submitted to Hopscotch for a code test as first part of job application, Jun 3 2021
+
 // Globals
 // Should properly be moved to an object so multiple puzzles can be instantiated.
 
@@ -44,8 +49,7 @@ $(function(){
 
   $("#reset").on("click",reset_puzzle);
 
-  reset_puzzle(false); // For the purposes of testing, it's useful to have the puzzle start out solved.
-  
+  reset_puzzle(false); // FIXME production: For the purposes of testing, it's useful to have the puzzle start out solved.
 });
 
 function reset_puzzle(shuffle)
@@ -66,13 +70,13 @@ function reset_puzzle(shuffle)
 // There isn't builtin shuffle methond in javascript, like there is in python,
 // One solution is this one:
 //
-// Randomize array in-place using Durstenfeld shuffle algorithm 
-// Taken from https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
-function shuffleArray(array) {
-  // This function CAN lead to unsolvable configurations.
 
+function shuffleArray(array) {
   // track pairity
   var pairity = 1;
+  
+  // Randomize array in-place using Durstenfeld shuffle algorithm 
+  // Cribbed from https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
   for (var i = array.length - 1; i > 0; i--) {
       var j = Math.floor(Math.random() * (i + 1));
       var temp = array[i];
