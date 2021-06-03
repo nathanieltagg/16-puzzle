@@ -79,3 +79,8 @@ body {
   100% { transform: translate(1px, 0px ); }
 }
 
+#about {
+  position:  absolute;
+  right:  0;
+  top:  0;
+}
